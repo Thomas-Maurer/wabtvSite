@@ -28,10 +28,11 @@
 	<meta name="description" content="WAB TV">
 
     <?= $this->Html->meta('icon') ?>
-
+		<?= $this->Html->css('angular-material.min'); ?>
 		<?= $this->Html->css('bower_components/bootstrap/dist/css/bootstrap.min.css') ?> <!-- Default style -->
-	<?= $this->Html->css('prog.css') ?> <!-- calendar style -->
-	<?= $this->Html->css('angular-material.min'); ?>
+		<?= $this->Html->css('reset.css') ?> <!-- Reset style -->
+		<?= $this->Html->css('style.css') ?> <!-- Default style -->
+		<?= $this->Html->css('prog.css') ?> <!-- calendar style -->
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -53,23 +54,31 @@
 		<![endif]-->
 </head>
 <body ng-app="wabTV">
-<div id="container">
-<?= $this->Flash->render('auth') ;?>
-<?= $this->element('header'); ?>
-<div id="content">
-		<div id="sidebar-left" role="complementary">
-		<?= $this->element('opmarket'); ?>
-		<?= $this->element('social'); ?>
-		<?= $this->element('event'); ?>
-		</div>
-		<div id="sidebar-middle">
-			<?= $this->fetch('content') ?>
+	<header>
+		<?= $this->element('header'); ?>
+	</header>
+<div class="container">
+	<?= $this->Flash->render('auth') ;?>
+	<div class="">
+			<div>
+				<?= $this->element('opmarket'); ?>
+				<?= $this->element('social'); ?>
+				<?= $this->element('event'); ?>
+			</div>
+				<?= $this->fetch('content') ?>
+			<div class="row">
+			<?= $this->element('infostream') ?>
+			<?= $this->element('infoFollow'); ?>
+			</div>
+
 			<?= $this->element('planning') ?>
-		</div>
-		<div id="sidebar-right">
-		<?= $this->element('walloffame'); ?>
-		</div>
+			<div>
+				<?= $this->element('walloffame'); ?>
+			</div>
+	</div>
 </div>
-</div>
+<footer>
+	<p>© 2016-2017 Wab TV, Tous Droits Réservés.</br>Politique de confidentialité - <?php echo $this->Html->link('Mentions légale', '/pages/mentions_legales'); ?> - <?php echo $this->Html->link('Conditions d\'Utilisation', '/pages/conditions_generales'); ?></p>
+</footer>
 </body>
 </html>

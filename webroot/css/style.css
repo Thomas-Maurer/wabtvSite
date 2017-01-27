@@ -1,21 +1,4 @@
 @font-face {
-  font-family: "Roboto";
-  src: url("../font/Roboto/Roboto-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Roboto";
-  font-style: italic;
-  src: url("../font/Roboto/Roboto-Italic.ttf");
-}
-
-@font-face {
-  font-family: "Roboto";
-  font-weight: bold;
-  src: url("../font/Roboto/Roboto-Bold.ttf");
-}
-
-@font-face {
   font-family: "Oswald";
   src: url("../font/Oswald/Oswald-Regular.ttf");
 }
@@ -41,6 +24,9 @@
   font-family: "Built titling";
   src: url("../font/Built-titling/built titling bd it.ttf");
 }
+html {
+  height: auto;
+}
 
 body {
 background-image:url(../img/background.jpg);
@@ -48,14 +34,12 @@ font-family:Roboto,sans-serif;
 font-style:normal;
 font-weight:400;
 height:100%;
-overflow:hidden;
 margin:0 auto;
 padding:5px;
 }
 
 #container {
-height:100%;
-width:100%;
+
 }
 
 #wrapper-header {
@@ -73,10 +57,8 @@ float:left;
 }
 
 header #partenaires {
-float:left;
-left:20%;
-position:absolute;
-width:100%;
+    left: 20%;
+    width: auto;
 }
 
 header #partenaires .partenaire img {
@@ -243,14 +225,25 @@ top:10px;
 width:17%;
 }
 
+#readerhome iframe {
+height:69.6%;
+position:absolute;
+width:100%;
+}
+
 #sidebar-middle {
 bottom:0;
 float:left;
 height:100%;
-left:17.4%;
 position:absolute;
 top:.625rem;
-width:60%;
+width:80%;
+}
+
+#twitch-chat {
+	width: 350px;
+	height: 550px;
+	float: right;
 }
 
 .event-title {
@@ -296,6 +289,7 @@ margin:0;
 
 .event-title h1::before,.titre h1::before,.title_wall_of_fame h1::before {
 background:rgba(0,0,0,0) url(../img/menu_blocs/left-corner-block.png);
+    background-repeat: no-repeat;
 content:"";
 display:inline-block;
 float:left;
@@ -465,7 +459,6 @@ background-repeat:no-repeat;
 height:84px;
 bottom:18.7%;
 float:left;
-position:absolute;
 width:100%;
 margin:5px 0;
 }
@@ -850,6 +843,84 @@ position:absolute;
 right:10%;
 top:25%;
 }
+
+footer {
+  margin: 0 auto;
+  position: fixed;
+  height: 5%;
+  left: 0;
+  text-align: center;
+  width: 16.8%;
+  right: 0;
+  bottom: 0;
+}
+
+footer p{
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    font-size: 64%;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+.content_pages {
+background-color: #fff;
+    padding: 2%;
+    overflow-y: scroll;
+    font-size: 80%;
+    height: 88.2%;
+    font-style: roboto;
+
+}
+
+.content_pages p {
+text-align:justify
+
+}
+
+.title_pages h1 a, .title_pages h2 a {
+color:#fff;
+font-family:"Built titling",Arial;
+font-size:15px;
+font-weight:700;
+text-decoration:none;
+text-shadow:2px 2px 2px #b00000;
+text-transform:uppercase;
+}
+
+.title_pages h2 a {
+text-shadow: 2px 2px 2px #0F0707;
+}
+
+.title_pages span {
+position:absolute;
+    left: 1%;
+    top: 31%;
+}
+
+.title_pages h1 {
+background-image:url(../img/menu_blocs/middle-corner-block.png);
+background-repeat:repeat-x;
+height:36px;
+position:relative;
+text-align:right;
+width:100%;
+margin:0;
+}
+
+.title_pages h2 {
+background-image:url(../img/menu_blocs/middle-corner-block_title.png);
+background-repeat:repeat-x;
+height:36px;
+position:relative;
+text-align:right;
+width:100%;
+margin:1% 0 1% 0;
+}
+
 @media screen and (max-width: 1760px){html,body{font-size:96%}#content{height:84%}.wablogo img{max-width:95%}#readerhome iframe{height:68.5%}#info_stream ul{margin-top:4%}#chat{height:69%}#messages{height:77%}.chatarea{height:93%}#timeline{height:14%}.content_wall_of_fame li{line-height:1.69em}.social_yt li:nth-child(2){line-height:23px;padding-left:27px;margin-left:3%}.social_fb li:nth-child(2),.social_tw li:nth-child(2){margin-left:4%;padding-left:25px;line-height:23px}.social_youtube{margin:10% 0 10% 20%}.social_tweeter,.social_like{margin:10% 0 10% 0}.social-left{max-width:22%}}@media screen and (max-width: 1600px){#content{height:86%}.wablogo img{max-width:80%}#chat{height:89.6%}.chatarea{height:100%}#messages{height:82%}#wall_of_fame,#timeline{display:none}#info{top:80.8%;margin:0}#info_buttons{margin:1% 0 0px;position:absolute;right:0}#info_buttons ul{font-size:70%;margin:0}#info_buttons img{max-width:80%}#info_buttons li.info_like{background:rgba(0, 0, 0, 0) url("../img/menu_infos/like.png") no-repeat 12%;margin:0;background-size:13%}#info_stream{font-size:78%}#readerhome iframe{height:80%}#sidebar-social{height:79px}.social-right h3{font-size:0.713em}.social-left{font-size:0.7em}.social_fb li:nth-child(2),.social_tw li:nth-child(2),.social_yt li:nth-child(2){padding-left:18px;line-height:14px;background-size:35%}.social_tweeter,.social_like{margin:2% 0 18% 0}.social_youtube{margin:2% 0 19% 22%}}@media screen and (max-width: 1440px){#content{height:80%}#sidebar-social{font-size:0.75rem}.wablogo img{max-width:69%}.event-title span{right:18%}.titre span{right:14%}#info_buttons{margin:5px 0px 0px}#info{bottom:0;height:57px;top:87%}#info_stream{font-size:85%;padding:10px 0px 0px 135px}#info_stream h4{font-size:0.7em}#info_stream h3{font-size:0.9em}#info_buttons ul{margin:0px;font-size:0.6em}#info_buttons img{max-width:70%}#info_stream .info_spec,#info_stream .info_views{line-height:12px}#info_stream ul{margin-top:2.5%;font-size:0.7em}#info_stream .info_spec{padding:0px 0px 0px 17px;background-size:5%}#info_stream .info_views{padding:0px 0px 0px 17px;background-size:7%}#readerhome iframe{height:67.9%}#chat{height:92.9%;font-size:9px}#chatarea{height:88.2%}#messages{height:78%}#sendmessagebutton{max-height:20%}#sidebar-social{background-size:100% 95%}.event-title{margin:0px}.social-left{font-size:0.8em;margin:4% 0 0 1%}#info_buttons img{max-width:70%}#info_buttons ul{font-size:60%;width:28%}#readerhome iframe{height:85.9%}}@media only screen and (max-width: 1280px){#content{height:79%}.wablogo img{max-width:67%}p.wrap_new2{display:none}#select{left:0}.menu1{left:1%}#readerhome iframe{height:95.4%}#info{visibility:hidden}#chat{height:88.9%}#messages{height:74%}#sidebar-social{background-size:100%}.social-right h3{font-size:0.653em;margin:6px 0px}.social-left{font-size:0.5em}.social_fb li:nth-child(2),.social_tw li:nth-child(2){padding-left:12px;line-height:10px}.social_yt li:nth-child(2){padding-left:14px;line-height:10px}.social_fb a,.social_yt a,.social_tw a{font-size:0.705em}#sidebar-social{height:60px}}@media screen and (max-width: 1024px){header #partenaires{left:23%}#content{height:83%}#sidebar-left{display:none}#readerhome iframe{height:87.4%}#sidebar-middle{left:0}#chat{height:77.9%}#messages{height:66%}#sidebar-right{width:39%}}
 
 * html #row {
