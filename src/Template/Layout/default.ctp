@@ -32,7 +32,6 @@
 		<?= $this->Html->css('bower_components/bootstrap/dist/css/bootstrap.min.css') ?> <!-- Default style -->
 		<?= $this->Html->css('reset.css') ?> <!-- Reset style -->
 		<?= $this->Html->css('style.css') ?> <!-- Default style -->
-		<?= $this->Html->css('prog.css') ?> <!-- calendar style -->
 		<?= $this->Html->css('nav-menu.css') ?> <!-- navmenu style -->
 		<?= $this->Html->css('header-stream.css') ?> <!-- navmenu style -->
 
@@ -59,7 +58,6 @@
 </head>
 <body ng-app="wabTV">
 	<header>
-		<? $this->element('header'); ?>
 	</header>
 	<div class="nav-side-menu">
 		<div class="brand"><img src="/img/wab_logo.png" alt=""></div>
@@ -69,7 +67,11 @@
 
 				<ul id="menu-content" class="menu-content collapse out">
 
-						<li  data-toggle="collapse" data-target="#products" class="collapsed active">
+					<li class="collapsed active">
+						<a href="#"><span class="glyphicon glyphicon-facetime-video"></span><i class="fa fa-gift fa-lg"></i> Stream </a>
+					</li>
+
+						<li  data-toggle="collapse" data-target="#products" class="collapsed">
 							<a href="#"><span class="glyphicon glyphicon-calendar"></span><i class="fa fa-gift fa-lg"></i> Programmation </a>
 						</li>
 
@@ -88,11 +90,6 @@
 		<div ng-class="{'row-theaterMode': activeTheater}" class="row">
 		<?= $this->element('infostream') ?>
 		<?= $this->element('infoFollow'); ?>
-		</div>
-
-		<?= $this->element('planning') ?>
-		<div>
-			<?= $this->element('walloffame'); ?>
 		</div>
 </div>
 <footer>
