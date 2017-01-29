@@ -59,7 +59,7 @@
 <body ng-app="wabTV" ng-controller="streamController">
 	<header>
 	</header>
-	<div ng-class="{'theater-on-side-menu': activeTheater}" class="nav-side-menu">
+	<div ng-class="{'theater-on-side-menu': activeTheater}" class="col-md-2 nav-side-menu">
 		<div class="brand">
 			<?= $this->Html->image('wab_logo.png',array());?>
 		</div>

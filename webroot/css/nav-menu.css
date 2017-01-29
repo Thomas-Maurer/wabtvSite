@@ -3,7 +3,7 @@
       font-size: 12px;
       font-weight: 200;
       position: fixed;
-      width: 335px;
+      padding: 0;
       height: 100%;
       color: #e1ffff;
       border-right: 1px solid #b320ff;
@@ -111,6 +111,7 @@
 }
 @media (max-width: 767px) {
   .nav-side-menu {
+    display: none;
     position: relative;
     width: 100%;
     margin-bottom: 10px;
