@@ -1,4 +1,6 @@
-<h1 ng-if="activeTheater"><img src="/img/wab_logo.png" alt=""></h1>
+<h1 ng-if="activeTheater">
+  <?= $this->Html->image('wab_logo.png',array());?>
+</h1>
 <div class="col-md-12 nav-header-stream">
   <ul class="nav-header-stream nav nav-tabs col-md-8 embed-responsive">
     <li role="presentation" ng-click="theaterOn()">

@@ -60,7 +60,9 @@
 	<header>
 	</header>
 	<div class="nav-side-menu">
-		<div class="brand"><img src="/img/wab_logo.png" alt=""></div>
+		<div class="brand">
+			<?= $this->Html->image('wab_logo.png',array());?>
+		</div>
 			<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
 		<div class="menu-list">
