@@ -56,10 +56,10 @@
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 </head>
-<body ng-app="wabTV">
+<body ng-app="wabTV" ng-controller="streamController">
 	<header>
 	</header>
-	<div class="nav-side-menu">
+	<div ng-class="{'theater-on-side-menu': activeTheater}" class="nav-side-menu">
 		<div class="brand">
 			<?= $this->Html->image('wab_logo.png',array());?>
 		</div>
@@ -82,8 +82,11 @@
 						</li>
 				</ul>
 	</div>
+	<div class="footer-side-menu">
+		<span>© 2016-2017 Wab TV, Tous Droits Réservés.</span>
 	</div>
-<div ng-controller="streamController" ng-class="{'theater-on': activeTheater}" class="container">
+	</div>
+<div ng-class="{'theater-on': activeTheater, 'theater-off': !activeTheater}" class="container">
 	<?= $this->Flash->render('auth') ;?>
 			<?= $this->element('opmarket'); ?>
 			<?= $this->element('social'); ?>
@@ -91,11 +94,7 @@
 			<?= $this->fetch('content') ?>
 		<div ng-class="{'row-theaterMode': activeTheater}" class="row">
 		<?= $this->element('infostream') ?>
-		<?= $this->element('infoFollow'); ?>
 		</div>
 </div>
-<footer>
-	<p>© 2016-2017 Wab TV, Tous Droits Réservés.</br>Politique de confidentialité - <?php echo $this->Html->link('Mentions légale', '/pages/mentions_legales'); ?> - <?php echo $this->Html->link('Conditions d\'Utilisation', '/pages/conditions_generales'); ?></p>
-</footer>
 </body>
 </html>

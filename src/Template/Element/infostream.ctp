@@ -12,7 +12,7 @@
   <!-- 16:9 aspect ratio -->
   <iframe  frameborder="0" class="embed-responsive-item" src="http://player.twitch.tv/?channel=weareb0b" scrolling="no" allowFullScreen="true"></iframe>
 </div>
-<div class="col-md-4 embed-responsive embed-responsive-16by9">
+<div ng-class="{'embed-responsive-theaterMode': activeTheater}" class="col-md-4 embed-responsive embed-responsive-16by9">
   <iframe frameborder="0"
           class="embed-responsive-item"
           scrolling="no"

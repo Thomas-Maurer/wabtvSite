@@ -1,5 +1,6 @@
 .nav-tabs>li>a {
   border-radius: 0px 25px 0 0;
+  color: #b320ff;
 }
 .nav-tabs>li>a:hover {
     border-color: #b320ff #b320ff #b320ff;
