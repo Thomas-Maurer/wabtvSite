@@ -1,0 +1,21 @@
+.nav-tabs>li>a {
+  border-radius: 0px 25px 0 0;
+}
+.nav-tabs>li>a:hover {
+    border-color: #b320ff #b320ff #b320ff;
+}
+.nav-header-stream>li {
+    border-radius: 0px 25px 0 0;
+    float: right;
+    background-color: #282828;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  background-color: #b320ff;
+  border: 0px solid #ddd;
+  color: #fff;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  color: #fff;
+  background-color: #b320ff;
+}

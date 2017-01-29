@@ -1,6 +1,13 @@
-<div class="col-md-8 embed-responsive embed-responsive-16by9">
+<div class="col-md-12 nav-header-stream">
+  <ul class="nav-header-stream nav nav-tabs col-md-8 embed-responsive">
+    <li role="presentation" ng-click="theaterOn()">
+      <a href="#"> <span class="glyphicon glyphicon-fullscreen"></span>  Mode Theatre</a>
+    </li>
+  </ul>
+</div>
+<div ng-class="{'embed-responsive-theaterMode': activeTheater}" class="col-md-8 embed-responsive embed-responsive-16by9">
   <!-- 16:9 aspect ratio -->
-  <iframe  frameborder="0" class="embed-responsive-item" src="http://player.twitch.tv/?channel=weareb0b" scrolling="no"></iframe>
+  <iframe  frameborder="0" class="embed-responsive-item" src="http://player.twitch.tv/?channel=weareb0b" scrolling="no" allowFullScreen="true"></iframe>
 </div>
 <div class="col-md-4 embed-responsive embed-responsive-16by9">
   <iframe frameborder="0"

@@ -33,6 +33,8 @@
 		<?= $this->Html->css('reset.css') ?> <!-- Reset style -->
 		<?= $this->Html->css('style.css') ?> <!-- Default style -->
 		<?= $this->Html->css('prog.css') ?> <!-- calendar style -->
+		<?= $this->Html->css('nav-menu.css') ?> <!-- navmenu style -->
+		<?= $this->Html->css('header-stream.css') ?> <!-- navmenu style -->
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
@@ -46,36 +48,52 @@
     <?= $this->Html->script('bower_components/jquery/dist/jquery.min'); ?>
     <?= $this->Html->script('bower_components/jquery-ui/jquery-ui.min'); ?>
     <?= $this->Html->script('bower_components/underscore/underscore.js'); ?>
+		<?= $this->Html->script('../css/bower_components/bootstrap/dist/js/bootstrap.min') ?>
 		<?= $this->Html->script('app'); ?>
 		<?= $this->Html->script('controllers/progController'); ?>
-    <?= $this->Html->script('controllers/adminTimelineController'); ?>
+		<?= $this->Html->script('controllers/adminTimelineController'); ?>
+    <?= $this->Html->script('controllers/streamController'); ?>
 			<!--[if lt IE 9]>
 		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 </head>
 <body ng-app="wabTV">
 	<header>
-		<?= $this->element('header'); ?>
+		<? $this->element('header'); ?>
 	</header>
-<div class="container">
-	<?= $this->Flash->render('auth') ;?>
-	<div class="">
-			<div>
-				<?= $this->element('opmarket'); ?>
-				<?= $this->element('social'); ?>
-				<?= $this->element('event'); ?>
-			</div>
-				<?= $this->fetch('content') ?>
-			<div class="row">
-			<?= $this->element('infostream') ?>
-			<?= $this->element('infoFollow'); ?>
-			</div>
+	<div class="nav-side-menu">
+		<div class="brand"><img src="/img/wab_logo.png" alt=""></div>
+			<i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
-			<?= $this->element('planning') ?>
-			<div>
-				<?= $this->element('walloffame'); ?>
-			</div>
+		<div class="menu-list">
+
+				<ul id="menu-content" class="menu-content collapse out">
+
+						<li  data-toggle="collapse" data-target="#products" class="collapsed active">
+							<a href="#"><span class="glyphicon glyphicon-calendar"></span><i class="fa fa-gift fa-lg"></i> Programmation </a>
+						</li>
+
+						<li data-toggle="collapse" data-target="#new" class="collapsed">
+							<a href="#"><span class="glyphicon glyphicon-facetime-video"></span><i class="fa fa-car fa-lg"></i> Dernières vidéos </a>
+						</li>
+				</ul>
 	</div>
+	</div>
+<div ng-controller="streamController" ng-class="{'theater-on': activeTheater}" class="container">
+	<?= $this->Flash->render('auth') ;?>
+			<?= $this->element('opmarket'); ?>
+			<?= $this->element('social'); ?>
+			<?= $this->element('event'); ?>
+			<?= $this->fetch('content') ?>
+		<div ng-class="{'row-theaterMode': activeTheater}" class="row">
+		<?= $this->element('infostream') ?>
+		<?= $this->element('infoFollow'); ?>
+		</div>
+
+		<?= $this->element('planning') ?>
+		<div>
+			<?= $this->element('walloffame'); ?>
+		</div>
 </div>
 <footer>
 	<p>© 2016-2017 Wab TV, Tous Droits Réservés.</br>Politique de confidentialité - <?php echo $this->Html->link('Mentions légale', '/pages/mentions_legales'); ?> - <?php echo $this->Html->link('Conditions d\'Utilisation', '/pages/conditions_generales'); ?></p>
